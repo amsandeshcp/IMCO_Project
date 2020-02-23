@@ -1,4 +1,5 @@
 ﻿using IMCO.Base;
+using IMCO.Core.Base;
 using IMCO.Models.Admin;
 using System;
 using System.Collections.Generic;
@@ -38,11 +39,22 @@ namespace IMCO.Controllers
         [HttpPost]
         public ActionResult Login(ClsLogin clsLogin)//(string UserName,string Password)
         {
-            
-            //ClsLogin clsLogin = new ClsLogin();
-            //clsLogin.UserName = UserName;
-            //clsLogin.Password= Password;
-            // return Content("<html>sam</html>");
+            #region ValidationProcess with API
+
+            #region PostConcept
+            //ClsLoginRequest obj = new ClsLoginRequest();
+            //obj.Model = clsLogin;
+            //obj.UserId = 0;
+
+            //var objResult2 = Post<ResponseDto<ClsLoginResponse>>($"api/user-verify/validate-login", obj);
+            #endregion
+
+            #region GetConcept
+            var objResult2 = Get<bool>(string.Format("api/user-verify/validate-login?Uname={0}&Pass={1}", clsLogin.UserName, clsLogin.Password));
+            #endregion
+
+            ViewBag.status = objResult2;
+            #endregion
             return View();
         }
     }

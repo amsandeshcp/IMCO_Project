@@ -7,6 +7,16 @@ using System.Threading.Tasks;
 
 namespace IMCO.Models.Admin
 {
+    public class ClsLoginRequest
+    {
+        public ClsLogin Model { get; set; }
+        public int UserId { get; set; }
+    }
+
+    public class ClsLoginResponse
+    {
+        public bool IsSuccess { get; set; }
+    }
     public class ClsLogin : ClsCommon
     {
         [Display(Name = "LoginID")]

@@ -55,6 +55,40 @@ namespace IMCO.Base
             }
         }
 
+        protected T Post<T>(string url, object content, bool includeAccessToken = true)
+        {
+            try
+            {
+                using (var client = GetHttpClient(includeAccessToken))
+                {
+                    var httpContent = new StringContent(JsonConvert.SerializeObject(content));
+                    httpContent.Headers.ContentType = new MediaTypeHeaderValue("application/json");
+
+                    var responseMsg = client.PostAsync(url, httpContent).Result;
+                    if (responseMsg.IsSuccessStatusCode)
+                    {
+                        var responseString = responseMsg.Content.ReadAsStringAsync().Result;
+                        return JsonConvert.DeserializeObject<T>(responseString);
+                    }
+                    else
+                    {
+                        var responseString = responseMsg.Content.ReadAsStringAsync().Result;
+                        var model = JsonConvert.DeserializeObject<ApiExceptionModel>(responseString);
+                        throw new Exception($"{model.Message} - ({model.ExceptionMessage})");
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                string message = ex.GetAllMessages();
+                //var dto = new T();
+                //if (dto is ResponseDto)
+                //    (dto as ResponseDto).ErrorMessages.Add(message);
+                AddNotification(NotifyType.Error, message, false);
+                return default(T);
+            }
+        }
+
         private HttpClient GetHttpClient(bool includeAccessToken = false)
         {
             var client = new HttpClient();
