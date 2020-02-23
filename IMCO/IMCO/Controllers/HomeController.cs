@@ -11,7 +11,6 @@ namespace IMCO.Controllers
     {
         public ActionResult Index()
         {
-           DownloadFile_Isprint();
             return View();
         }
 
@@ -26,6 +25,12 @@ namespace IMCO.Controllers
         {
             ViewBag.Message = "Your contact page.";
 
+            return View();
+        }
+
+        public ActionResult Login()
+        {
+            // return Content("<html>sam</html>");
             return View();
         }
     }
