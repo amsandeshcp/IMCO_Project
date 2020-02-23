@@ -1,7 +1,9 @@
-﻿using System;
+﻿using IMCO.Services.Controllers;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web.Http;
+using System.Web.Http.ExceptionHandling;
 
 namespace IMCO.Services
 {
@@ -13,7 +15,7 @@ namespace IMCO.Services
 
             // Web API routes
             config.MapHttpAttributeRoutes();
-
+            config.Services.Add(typeof(IExceptionLogger), new ExceptionManagerApi());
             config.Routes.MapHttpRoute(
                 name: "DefaultApi",
                 routeTemplate: "api/{controller}/{id}",

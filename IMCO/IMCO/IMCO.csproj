@@ -166,6 +166,7 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\ApiExceptionModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -212,7 +213,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Models\" />
     <Folder Include="Views\Base\" />
   </ItemGroup>
   <ItemGroup>
@@ -227,6 +227,24 @@
     <None Include="packages.config" />
     <Content Include="Scripts\jquery-3.3.1.slim.min.map" />
     <Content Include="Scripts\jquery-3.3.1.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\IMCO.BAL\IMCO.BAL.csproj">
+      <Project>{7a78c7bd-5cd9-40e9-9194-b74e0b8edd08}</Project>
+      <Name>IMCO.BAL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\IMCO.Core\IMCO.Core.csproj">
+      <Project>{3cdd6f7e-d8b0-4ebf-bc4d-7ea0afeb7b7f}</Project>
+      <Name>IMCO.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\IMCO.Models\IMCO.Models.csproj">
+      <Project>{9b823216-88af-4a41-8ea7-9bbdbb07c224}</Project>
+      <Name>IMCO.Models</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\IMCO.Services\IMCO.Services.csproj">
+      <Project>{bd0fc5ac-0ed1-4c03-92b8-924760bddc53}</Project>
+      <Name>IMCO.Services</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

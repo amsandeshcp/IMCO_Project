@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="cd80aab7c05e432289b9a1b0a19cb722" Name="Diagram1">
+        <EntityTypeShape EntityType="IMCODBModel.tbl_Group_Login_X" Width="1.5" PointX="0.75" PointY="0.75" />
+        <EntityTypeShape EntityType="IMCODBModel.tbl_Groups" Width="1.5" PointX="2.75" PointY="0.75" />
+        <EntityTypeShape EntityType="IMCODBModel.tbl_Module" Width="1.5" PointX="4.75" PointY="0.75" />
+        <EntityTypeShape EntityType="IMCODBModel.tbl_Module_Functions" Width="1.5" PointX="0.75" PointY="4.75" />
+        <EntityTypeShape EntityType="IMCODBModel.tbl_Module_PermissionLevel" Width="1.5" PointX="2.75" PointY="4.75" />
+        <EntityTypeShape EntityType="IMCODBModel.tbl_People" Width="1.5" PointX="4.75" PointY="3.75" />
+        <EntityTypeShape EntityType="IMCODBModel.tbl_People_Module_X" Width="1.5" PointX="6.75" PointY="0.75" />
+        <EntityTypeShape EntityType="IMCODBModel.Login" Width="1.5" PointX="6.75" PointY="3.75" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

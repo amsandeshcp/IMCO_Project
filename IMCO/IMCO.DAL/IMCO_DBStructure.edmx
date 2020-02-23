@@ -1,0 +1,342 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="IMCODBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="tbl_Group_Login_X">
+          <Key>
+            <PropertyRef Name="GrpUserID_PK" />
+          </Key>
+          <Property Name="GrpUserID_PK" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="GrpID_FK" Type="int" Nullable="false" />
+          <Property Name="Login_id_FK" Type="int" />
+          <Property Name="CreatedUserID" Type="int" />
+          <Property Name="CreatedDateTime" Type="datetime" />
+          <Property Name="UpdatedUserID" Type="int" />
+          <Property Name="UpdatedDateTime" Type="datetime" />
+        </EntityType>
+        <EntityType Name="tbl_Groups">
+          <Key>
+            <PropertyRef Name="GrpID_PK" />
+          </Key>
+          <Property Name="GrpID_PK" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="GroupType" Type="int" />
+          <Property Name="GrpName" Type="nvarchar" MaxLength="75" />
+          <Property Name="GrpDesc" Type="nvarchar" MaxLength="150" />
+          <Property Name="IsActive" Type="bit" />
+          <Property Name="CreatedUserID" Type="int" />
+          <Property Name="CreatedDateTime" Type="datetime" />
+          <Property Name="UpdatedUserID" Type="int" />
+          <Property Name="UpdatedDateTime" Type="datetime" />
+        </EntityType>
+        <EntityType Name="tbl_Module">
+          <Key>
+            <PropertyRef Name="Module_ID_PK" />
+          </Key>
+          <Property Name="Module_ID_PK" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Module_Name" Type="varchar" MaxLength="200" Nullable="false" />
+        </EntityType>
+        <EntityType Name="tbl_Module_Functions">
+          <Key>
+            <PropertyRef Name="Functions_ID_PK" />
+          </Key>
+          <Property Name="Functions_ID_PK" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Module_ID_FK" Type="int" Nullable="false" />
+          <Property Name="Function_Name" Type="nvarchar(max)" Nullable="false" />
+        </EntityType>
+        <EntityType Name="tbl_Module_PermissionLevel">
+          <Key>
+            <PropertyRef Name="PermLevId_PK" />
+          </Key>
+          <Property Name="PermLevId_PK" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="PermissionName" Type="nvarchar" MaxLength="50" />
+          <Property Name="PermissionDesc" Type="nchar" MaxLength="150" />
+          <Property Name="InActive" Type="bit" />
+          <Property Name="CreatedUserID" Type="int" />
+          <Property Name="CreatedDateTime" Type="datetime" />
+          <Property Name="UpdatedUserID" Type="int" />
+          <Property Name="UpdatedDateTime" Type="datetime" />
+        </EntityType>
+        <EntityType Name="tbl_People">
+          <Key>
+            <PropertyRef Name="PeopleID_PK" />
+          </Key>
+          <Property Name="PeopleID_PK" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="People_FN" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="People_LN" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="People_Active" Type="bit" />
+          <Property Name="People_Visible" Type="bit" />
+          <Property Name="CreatedUserID" Type="int" />
+          <Property Name="CreatedDateTime" Type="datetime" />
+          <Property Name="UpdatedUserID" Type="int" />
+          <Property Name="UpdatedDateTime" Type="datetime" />
+        </EntityType>
+        <EntityType Name="tbl_People_Module_X">
+          <Key>
+            <PropertyRef Name="People_Module_X_ID_PK" />
+          </Key>
+          <Property Name="People_Module_X_ID_PK" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="PeopleID_FK" Type="int" Nullable="false" />
+          <Property Name="Module_ID_FK" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Login">
+          <Key>
+            <PropertyRef Name="Login_id" />
+          </Key>
+          <Property Name="Login_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="PeopleID_FK" Type="int" Nullable="false" />
+          <Property Name="UserName" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Password" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="Login_Active" Type="bit" Nullable="false" />
+          <Property Name="Login_Visible" Type="bit" />
+          <Property Name="CreatedUserID" Type="int" />
+          <Property Name="CreatedDateTime" Type="datetime" />
+          <Property Name="UpdatedUserID" Type="int" />
+          <Property Name="UpdatedDateTime" Type="datetime" />
+        </EntityType>
+        <EntityContainer Name="IMCODBModelStoreContainer">
+          <EntitySet Name="tbl_Group_Login_X" EntityType="Self.tbl_Group_Login_X" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tbl_Groups" EntityType="Self.tbl_Groups" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tbl_Module" EntityType="Self.tbl_Module" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tbl_Module_Functions" EntityType="Self.tbl_Module_Functions" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tbl_Module_PermissionLevel" EntityType="Self.tbl_Module_PermissionLevel" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tbl_People" EntityType="Self.tbl_People" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tbl_People_Module_X" EntityType="Self.tbl_People_Module_X" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Login" EntityType="Self.Login" Schema="Master" store:Type="Tables" />
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="IMCODBModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="IMCODBEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="tbl_Group_Login_X" EntityType="IMCODBModel.tbl_Group_Login_X" />
+          <EntitySet Name="tbl_Groups" EntityType="IMCODBModel.tbl_Groups" />
+          <EntitySet Name="tbl_Module" EntityType="IMCODBModel.tbl_Module" />
+          <EntitySet Name="tbl_Module_Functions" EntityType="IMCODBModel.tbl_Module_Functions" />
+          <EntitySet Name="tbl_Module_PermissionLevel" EntityType="IMCODBModel.tbl_Module_PermissionLevel" />
+          <EntitySet Name="tbl_People" EntityType="IMCODBModel.tbl_People" />
+          <EntitySet Name="tbl_People_Module_X" EntityType="IMCODBModel.tbl_People_Module_X" />
+          <EntitySet Name="Logins" EntityType="IMCODBModel.Login" />
+        </EntityContainer>
+        <EntityType Name="tbl_Group_Login_X">
+          <Key>
+            <PropertyRef Name="GrpUserID_PK" />
+          </Key>
+          <Property Name="GrpUserID_PK" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="GrpID_FK" Type="Int32" Nullable="false" />
+          <Property Name="Login_id_FK" Type="Int32" />
+          <Property Name="CreatedUserID" Type="Int32" />
+          <Property Name="CreatedDateTime" Type="DateTime" Precision="3" />
+          <Property Name="UpdatedUserID" Type="Int32" />
+          <Property Name="UpdatedDateTime" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="tbl_Groups">
+          <Key>
+            <PropertyRef Name="GrpID_PK" />
+          </Key>
+          <Property Name="GrpID_PK" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="GroupType" Type="Int32" />
+          <Property Name="GrpName" Type="String" MaxLength="75" FixedLength="false" Unicode="true" />
+          <Property Name="GrpDesc" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="IsActive" Type="Boolean" />
+          <Property Name="CreatedUserID" Type="Int32" />
+          <Property Name="CreatedDateTime" Type="DateTime" Precision="3" />
+          <Property Name="UpdatedUserID" Type="Int32" />
+          <Property Name="UpdatedDateTime" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="tbl_Module">
+          <Key>
+            <PropertyRef Name="Module_ID_PK" />
+          </Key>
+          <Property Name="Module_ID_PK" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Module_Name" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="tbl_Module_Functions">
+          <Key>
+            <PropertyRef Name="Functions_ID_PK" />
+          </Key>
+          <Property Name="Functions_ID_PK" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Module_ID_FK" Type="Int32" Nullable="false" />
+          <Property Name="Function_Name" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="tbl_Module_PermissionLevel">
+          <Key>
+            <PropertyRef Name="PermLevId_PK" />
+          </Key>
+          <Property Name="PermLevId_PK" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="PermissionName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="PermissionDesc" Type="String" MaxLength="150" FixedLength="true" Unicode="true" />
+          <Property Name="InActive" Type="Boolean" />
+          <Property Name="CreatedUserID" Type="Int32" />
+          <Property Name="CreatedDateTime" Type="DateTime" Precision="3" />
+          <Property Name="UpdatedUserID" Type="Int32" />
+          <Property Name="UpdatedDateTime" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="tbl_People">
+          <Key>
+            <PropertyRef Name="PeopleID_PK" />
+          </Key>
+          <Property Name="PeopleID_PK" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="People_FN" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="People_LN" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="People_Active" Type="Boolean" />
+          <Property Name="People_Visible" Type="Boolean" />
+          <Property Name="CreatedUserID" Type="Int32" />
+          <Property Name="CreatedDateTime" Type="DateTime" Precision="3" />
+          <Property Name="UpdatedUserID" Type="Int32" />
+          <Property Name="UpdatedDateTime" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="tbl_People_Module_X">
+          <Key>
+            <PropertyRef Name="People_Module_X_ID_PK" />
+          </Key>
+          <Property Name="People_Module_X_ID_PK" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="PeopleID_FK" Type="Int32" Nullable="false" />
+          <Property Name="Module_ID_FK" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Login">
+          <Key>
+            <PropertyRef Name="Login_id" />
+          </Key>
+          <Property Name="Login_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="PeopleID_FK" Type="Int32" Nullable="false" />
+          <Property Name="UserName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Password" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Login_Active" Type="Boolean" Nullable="false" />
+          <Property Name="Login_Visible" Type="Boolean" />
+          <Property Name="CreatedUserID" Type="Int32" />
+          <Property Name="CreatedDateTime" Type="DateTime" Precision="3" />
+          <Property Name="UpdatedUserID" Type="Int32" />
+          <Property Name="UpdatedDateTime" Type="DateTime" Precision="3" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="IMCODBModelStoreContainer" CdmEntityContainer="IMCODBEntities">
+          <EntitySetMapping Name="tbl_Group_Login_X">
+            <EntityTypeMapping TypeName="IMCODBModel.tbl_Group_Login_X">
+              <MappingFragment StoreEntitySet="tbl_Group_Login_X">
+                <ScalarProperty Name="UpdatedDateTime" ColumnName="UpdatedDateTime" />
+                <ScalarProperty Name="UpdatedUserID" ColumnName="UpdatedUserID" />
+                <ScalarProperty Name="CreatedDateTime" ColumnName="CreatedDateTime" />
+                <ScalarProperty Name="CreatedUserID" ColumnName="CreatedUserID" />
+                <ScalarProperty Name="Login_id_FK" ColumnName="Login_id_FK" />
+                <ScalarProperty Name="GrpID_FK" ColumnName="GrpID_FK" />
+                <ScalarProperty Name="GrpUserID_PK" ColumnName="GrpUserID_PK" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbl_Groups">
+            <EntityTypeMapping TypeName="IMCODBModel.tbl_Groups">
+              <MappingFragment StoreEntitySet="tbl_Groups">
+                <ScalarProperty Name="UpdatedDateTime" ColumnName="UpdatedDateTime" />
+                <ScalarProperty Name="UpdatedUserID" ColumnName="UpdatedUserID" />
+                <ScalarProperty Name="CreatedDateTime" ColumnName="CreatedDateTime" />
+                <ScalarProperty Name="CreatedUserID" ColumnName="CreatedUserID" />
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+                <ScalarProperty Name="GrpDesc" ColumnName="GrpDesc" />
+                <ScalarProperty Name="GrpName" ColumnName="GrpName" />
+                <ScalarProperty Name="GroupType" ColumnName="GroupType" />
+                <ScalarProperty Name="GrpID_PK" ColumnName="GrpID_PK" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbl_Module">
+            <EntityTypeMapping TypeName="IMCODBModel.tbl_Module">
+              <MappingFragment StoreEntitySet="tbl_Module">
+                <ScalarProperty Name="Module_Name" ColumnName="Module_Name" />
+                <ScalarProperty Name="Module_ID_PK" ColumnName="Module_ID_PK" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbl_Module_Functions">
+            <EntityTypeMapping TypeName="IMCODBModel.tbl_Module_Functions">
+              <MappingFragment StoreEntitySet="tbl_Module_Functions">
+                <ScalarProperty Name="Function_Name" ColumnName="Function_Name" />
+                <ScalarProperty Name="Module_ID_FK" ColumnName="Module_ID_FK" />
+                <ScalarProperty Name="Functions_ID_PK" ColumnName="Functions_ID_PK" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbl_Module_PermissionLevel">
+            <EntityTypeMapping TypeName="IMCODBModel.tbl_Module_PermissionLevel">
+              <MappingFragment StoreEntitySet="tbl_Module_PermissionLevel">
+                <ScalarProperty Name="UpdatedDateTime" ColumnName="UpdatedDateTime" />
+                <ScalarProperty Name="UpdatedUserID" ColumnName="UpdatedUserID" />
+                <ScalarProperty Name="CreatedDateTime" ColumnName="CreatedDateTime" />
+                <ScalarProperty Name="CreatedUserID" ColumnName="CreatedUserID" />
+                <ScalarProperty Name="InActive" ColumnName="InActive" />
+                <ScalarProperty Name="PermissionDesc" ColumnName="PermissionDesc" />
+                <ScalarProperty Name="PermissionName" ColumnName="PermissionName" />
+                <ScalarProperty Name="PermLevId_PK" ColumnName="PermLevId_PK" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbl_People">
+            <EntityTypeMapping TypeName="IMCODBModel.tbl_People">
+              <MappingFragment StoreEntitySet="tbl_People">
+                <ScalarProperty Name="UpdatedDateTime" ColumnName="UpdatedDateTime" />
+                <ScalarProperty Name="UpdatedUserID" ColumnName="UpdatedUserID" />
+                <ScalarProperty Name="CreatedDateTime" ColumnName="CreatedDateTime" />
+                <ScalarProperty Name="CreatedUserID" ColumnName="CreatedUserID" />
+                <ScalarProperty Name="People_Visible" ColumnName="People_Visible" />
+                <ScalarProperty Name="People_Active" ColumnName="People_Active" />
+                <ScalarProperty Name="People_LN" ColumnName="People_LN" />
+                <ScalarProperty Name="People_FN" ColumnName="People_FN" />
+                <ScalarProperty Name="PeopleID_PK" ColumnName="PeopleID_PK" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbl_People_Module_X">
+            <EntityTypeMapping TypeName="IMCODBModel.tbl_People_Module_X">
+              <MappingFragment StoreEntitySet="tbl_People_Module_X">
+                <ScalarProperty Name="Module_ID_FK" ColumnName="Module_ID_FK" />
+                <ScalarProperty Name="PeopleID_FK" ColumnName="PeopleID_FK" />
+                <ScalarProperty Name="People_Module_X_ID_PK" ColumnName="People_Module_X_ID_PK" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Logins">
+            <EntityTypeMapping TypeName="IMCODBModel.Login">
+              <MappingFragment StoreEntitySet="Login">
+                <ScalarProperty Name="UpdatedDateTime" ColumnName="UpdatedDateTime" />
+                <ScalarProperty Name="UpdatedUserID" ColumnName="UpdatedUserID" />
+                <ScalarProperty Name="CreatedDateTime" ColumnName="CreatedDateTime" />
+                <ScalarProperty Name="CreatedUserID" ColumnName="CreatedUserID" />
+                <ScalarProperty Name="Login_Visible" ColumnName="Login_Visible" />
+                <ScalarProperty Name="Login_Active" ColumnName="Login_Active" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+                <ScalarProperty Name="UserName" ColumnName="UserName" />
+                <ScalarProperty Name="PeopleID_FK" ColumnName="PeopleID_FK" />
+                <ScalarProperty Name="Login_id" ColumnName="Login_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

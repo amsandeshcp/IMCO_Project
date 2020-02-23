@@ -1,4 +1,5 @@
 ﻿using IMCO.Base;
+using IMCO.Models.Admin;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -30,6 +31,17 @@ namespace IMCO.Controllers
 
         public ActionResult Login()
         {
+            // return Content("<html>sam</html>");
+            return View();
+        }
+
+        [HttpPost]
+        public ActionResult Login(ClsLogin clsLogin)//(string UserName,string Password)
+        {
+            
+            //ClsLogin clsLogin = new ClsLogin();
+            //clsLogin.UserName = UserName;
+            //clsLogin.Password= Password;
             // return Content("<html>sam</html>");
             return View();
         }

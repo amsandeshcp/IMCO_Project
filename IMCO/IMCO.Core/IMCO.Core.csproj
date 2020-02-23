@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{9B823216-88AF-4A41-8EA7-9BBDBB07C224}</ProjectGuid>
+    <ProjectGuid>{3CDD6F7E-D8B0-4EBF-BC4D-7EA0AFEB7B7F}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>IMCO.Models</RootNamespace>
-    <AssemblyName>IMCO.Models</AssemblyName>
+    <RootNamespace>IMCO.Core</RootNamespace>
+    <AssemblyName>IMCO.Core</AssemblyName>
     <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -31,7 +31,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
-    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -41,16 +41,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Admin\ClsGroups.cs" />
-    <Compile Include="Admin\ClsLogin.cs" />
-    <Compile Include="Admin\ClsModule.cs" />
-    <Compile Include="ClsCommon.cs" />
+    <Compile Include="Base\ResponseDto.cs" />
+    <Compile Include="Class1.cs" />
+    <Compile Include="Constants\AppSettingsKeys.cs" />
+    <Compile Include="Enums\NotifyType.cs" />
+    <Compile Include="Extensions\ExceptionExtensions.cs" />
+    <Compile Include="Helpers\AppSettingsReader.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Exam\" />
-    <Folder Include="Reg\" />
-    <Folder Include="Student\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
