@@ -10,6 +10,7 @@ namespace IMCO.Controllers
     {
         public ActionResult Index()
         {
+            var aksy = "aks";
             return View();
         }
 
