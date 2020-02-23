@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IMCO", "IMCO\IMCO.csproj", 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IMCO.Models", "IMCO.Models\IMCO.Models.csproj", "{9B823216-88AF-4A41-8EA7-9BBDBB07C224}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IMCO.Services", "IMCO.Services\IMCO.Services.csproj", "{BD0FC5AC-0ED1-4C03-92B8-924760BDDC53}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{9B823216-88AF-4A41-8EA7-9BBDBB07C224}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9B823216-88AF-4A41-8EA7-9BBDBB07C224}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9B823216-88AF-4A41-8EA7-9BBDBB07C224}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BD0FC5AC-0ED1-4C03-92B8-924760BDDC53}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BD0FC5AC-0ED1-4C03-92B8-924760BDDC53}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BD0FC5AC-0ED1-4C03-92B8-924760BDDC53}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BD0FC5AC-0ED1-4C03-92B8-924760BDDC53}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
