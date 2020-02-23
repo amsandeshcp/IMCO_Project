@@ -5,6 +5,8 @@ VisualStudioVersion = 15.0.27703.2000
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IMCO", "IMCO\IMCO.csproj", "{D0959925-3E6B-487E-BB3B-C87808E4B571}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IMCO.Models", "IMCO.Models\IMCO.Models.csproj", "{9B823216-88AF-4A41-8EA7-9BBDBB07C224}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{D0959925-3E6B-487E-BB3B-C87808E4B571}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D0959925-3E6B-487E-BB3B-C87808E4B571}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D0959925-3E6B-487E-BB3B-C87808E4B571}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9B823216-88AF-4A41-8EA7-9BBDBB07C224}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9B823216-88AF-4A41-8EA7-9BBDBB07C224}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9B823216-88AF-4A41-8EA7-9BBDBB07C224}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9B823216-88AF-4A41-8EA7-9BBDBB07C224}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
